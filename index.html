@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -306,7 +307,7 @@
                                             d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                                     </svg>
                                 </div>
-                            </div>            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -336,7 +337,94 @@
             <h2>Pretty rad.</h2>
         </section>
     </main>
+    <script>
+        import gsap from 'https://cdn.skypack.dev/gsap@3.12.0';
+        import ScrollTrigger from 'https://cdn.skypack.dev/gsap@3.12.0/ScrollTrigger';
 
+        if (!CSS.supports('animation-timeline: scroll()')) {
+            const SPAN = 'max(45vw, 260px)';
+            const CONFIG = [
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * -1;
+                    },
+                    y: -10,
+                    r: -8,
+                    h: 160,
+                    w: (index, el) => {
+                        return Math.max(320, el.parentNode.offsetWidthi * 0.55);
+                    }
+                },
+
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * 1;
+                    },
+                    y: -50,
+                    r: 15,
+                    h: 360,
+                    w: (index, el) => {
+                        return Math.max(220, el.parentNode.offsetWidth * 0.3);
+                    }
+                },
+
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * -1;
+                    },
+                    y: -30,
+                    r: 6,
+                    h: 300,
+                    w: (index, el) => {
+                        return Math.max(330, el.parentNode.offsetWidth * 0.55);
+                    }
+                },
+
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * 1;
+                    },
+                    y: -30,
+                    r: -5,
+                    h: 400,
+                    w: (index, el) => {
+                        return Math.max(305, el.parentNode.offsetWidth * 0.45);
+                    }
+                },
+
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * -1;
+                    },
+                    y: -45,
+                    r: -20,
+                    h: 525,
+                    w: (index, el) => {
+                        return Math.max(160, el.parentNode.offsetWidth * 0.3);
+                    }
+                },
+
+                {
+                    x: (index, el) => {
+                        return Math.max(260, window.innerWidth * 0.45) * 1;
+                    },
+                    y: 10,
+                    r: 10,
+                    h: 160,
+                    w: (index, el) => {
+                        return Math.max(320, el.parentNode.offsetWidth * 0.55);
+                    }
+                }];
+
+
+
+            gsap.registerPlugin(ScrollTrigger);
+            console.info('gsap: ScrollTrigger registered');
+
+            gsap.set('.hero', { position: 'absolute' });
+
+            const cards = document.querySelectorAll('.card');
+    </script>
 </body>
 
 </html>
