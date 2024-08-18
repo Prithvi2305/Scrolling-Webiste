@@ -224,6 +224,125 @@
             margin: 0;
             line-height: 1;
         }
+
+        .sticker .panel {
+            border-color: transparent;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* Card wizardry */
+        :root {
+            --entity-size: 30px;
+        }
+
+        .card {
+            display: flex;
+            align-items: start;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100cqh;
+            background: var(--card);
+            border: 1px solid var(--border);
+            box-shadow:
+                0 3px 4px rgba(23, 22, 24, .04),
+                0 1px 2px rgba(23, 22, 24, .04);
+        }
+
+        .card__column {
+            width: 100cqh;
+            height: 100cqh;
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .card__column:last-of-type {
+            align-self: flex-end;
+        }
+
+        .card__avatar {
+            height: var(--entity-size);
+            aspect-ratio: 1;
+            background: var(--element);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card__avatar * {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        .image svg {
+            width: 50%;
+        }
+
+        .card__avatar img {
+            z-index: 2;
+        }
+
+        .card--one .card__column:first-of-type,
+        .card--four .card__column:first-of-type,
+        .card--two .card__column:first-of-type {
+            align-self: center;
+        }
+
+        .card__content {
+            flex: 1;
+        }
+
+        .card__details {
+            height: 100cqh;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 58cqi;
+            position: relative;
+        }
+
+        .card__dummy .text {
+            flex: 0 1 auto;
+        }
+
+        .card--one .card__dummy,
+        .card--four .card__dummy {
+            padding-left: 2rem;
+        }
+
+        .card--one .card__dummy .text:first-of-type,
+        .card--four .card__dummy .text:first-of-type {
+            width: 85%;
+        }
+
+        .card--one .card__dummy .text:last-of-type,
+        .card--four .card__dummy .text:last-of-type {
+            width: 55%;
+        }
+
+        .card__dummy {
+            height: 160cqh;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .text {
+            height: 0.8rem;
+            background: var(--element);
+            border-radius: 100px;
+            flex: 1;
+        }
     </style>
 </head>
 
