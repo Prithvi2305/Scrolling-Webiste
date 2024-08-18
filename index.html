@@ -343,6 +343,118 @@
             border-radius: 100px;
             flex: 1;
         }
+
+        .image {
+            height: var(--entity-size);
+            aspect-ratio: 1;
+            background: var(--element);
+            border-radius: 50%;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+        }
+
+        .card__company {
+            height: var(--entity-size);
+            aspect-ratio: 1;
+            background: var(--element);
+            border-radius: 50%;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+        }
+
+        .youtube {
+            background: #FF0000;
+        }
+
+        .slack {
+            background: #4A154B;
+        }
+
+        .headspace {
+            background: #F47D31;
+        }
+
+        .alexa {
+            background: #00CAFF;
+        }
+
+        .messenger {
+            background: #00B2FF;
+        }
+
+        .notion {
+            background: #000000;
+        }
+
+        .paypal {
+            background: #003087;
+        }
+
+        .password {
+            background: #3B66BC;
+        }
+
+        .bluesky {
+            background: #0285FF;
+        }
+
+        .calendly {
+            background: #006BFF;
+        }
+
+        .instagram {
+            background: #E4405F;
+        }
+
+        .x {
+            background: #000000;
+        }
+
+        :where(.image, .card__company) path {
+            fill: white;
+        }
+
+        /*.card__content div:*/
+
+
+        .card__company svg {
+            width: 50%;
+        }
+
+        /* Animations */
+        .card--one {
+            --x: calc(var(--span) * -1);
+            --y: -10%;
+            --r: -8deg;
+            --h: 160%;
+            --w: max(55cqi, 320px);
+        }
+
+        .card--two {
+            --x: calc(var(--span) * -1);
+            --y: -30%;
+            --r: 6deg;
+            --h: 300%;
+            --w: max(55cqi, 330px);
+        }
+
+        .card--three {
+            --x: calc(var(--span) * 1);
+            --y: -50%;
+            --r: 15deg;
+            --h: 360%;
+            --w: max(30cqi, 220px);
+        }
+
+        .card--four {
+            --x: calc(var(--span) * 1);
+            --y: 10%;
+            --r: 10deg;
+            --h: 160%;
+            --w: max(55cqi, 320px);
+        }
     </style>
 </head>
 
