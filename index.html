@@ -682,6 +682,109 @@
         .card--five .card__dummy {
             height: 425%;
         }
+
+        .card--six .card__dummy {
+            height: 280%;
+        }
+
+        .card--three .text:last-of-type {
+            width: 45%;
+        }
+
+        .card--five .card__dummy,
+        .card--six .card__dummy {
+            gap: 1rem;
+            width: 34cqi;
+        }
+
+        .card--six .card__dummy {
+            --w: 250px;
+        }
+
+        .card--six .grid__panel {
+            aspect-ratio: 2 / 1;
+        }
+
+        .text-wrap {
+            display: grid;
+            gap: 0.5rem;
+            max-width: 65%;
+        }
+
+        .text-wrap :first-child {
+            width: 100%;
+        }
+
+        .text-wrap :last-child {
+            width: 80%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            width: calc(100% - 4rem);
+        }
+
+        .grid__panel {
+            aspect-ratio: 1;
+            background: var(--element);
+            border-radius: 12px;
+        }
+
+        .cta {
+            height: var(--entity-size);
+            width: 60%;
+            background: var(--accent);
+            border-radius: 100px;
+            scale: 0;
+            --s: 1;
+        }
+
+        .ring {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            translate: 0 0%;
+        }
+
+        .ring--over {
+            z-index: 10;
+        }
+
+        .ring--over img {
+            clip-path: inset(50% 0 0 0);
+        }
+
+        .ring img {
+            filter: hue-rotate(30deg);
+            width: 100%;
+            min-width: 700px;
+            max-width: 1400px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            translate: -50% -50%;
+            object-fit: cover;
+        }
+
+        .bear-link {
+            color: canvasText;
+            width: 48px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            opacity: 0.8;
+        }
+
+        :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+            opacity: 1;
+        }
+
+        .bear-link svg {
+            width: 75%;
+        }
     </style>
 </head>
 
