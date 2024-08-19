@@ -551,6 +551,137 @@
                 animation-timeline: --scroller;
                 animation-range: entry 0% exit 0%;
             }
+
+            @keyframes cta-morph {
+
+                0%,
+                30% {
+                    translate: -1rem 0;
+                    width: 120px;
+                }
+            }
+
+            @keyframes color-in {
+
+                0%,
+                50% {
+                    background: var(--element);
+                }
+            }
+
+            @keyframes expand {
+
+                0%,
+                30% {
+                    width: var(--w, 26cqi);
+                }
+            }
+
+            @keyframes shrink {
+
+                0%,
+                30% {
+                    width: calc(var(--w) - 2rem);
+                    border-radius: 12px;
+                    height: calc(300cqh - 2rem);
+                }
+
+                85% {
+                    height: var(--entity-size);
+                    width: var(--entity-size);
+                }
+            }
+
+            @keyframes grow {
+                0% {
+                    translate: var(--x, 0) var(--y, 0);
+                    height: var(--h, 100%);
+                    rotate: var(--r, 0);
+                    width: var(--w, 10cqi);
+                }
+
+                15% {
+                    rotate: var(--r, 0);
+                }
+
+                30% {
+                    rotate: 0deg;
+                    height: var(--h, 100%);
+                    width: calc(var(--w, 10cqi));
+                    translate: 0 var(--y, 0);
+                }
+            }
+
+            @keyframes morph {
+                0% {
+                    scale: var(--s);
+                }
+            }
+
+            @keyframes slide {
+
+                0%,
+                30% {
+                    translate: 0 -100cqh;
+                }
+
+                100% {
+                    translate: 0 0;
+                }
+            }
+        }
+
+
+
+        .card--one .card__avatar,
+        .card--four .card__avatar {
+            --s: 2;
+            transform-origin: 0 50%;
+        }
+
+        .card--two .card__avatar {
+            position: absolute;
+            z-index: 4;
+            left: 1rem;
+            width: var(--entity-size);
+            max-width: calc(100cqi - 2rem);
+        }
+
+        .card--two .card__column:last-of-type,
+        .card--three .card__column:last-of-type,
+        .card--five .card__column:last-of-type {
+            align-self: flex-start;
+        }
+
+        .card--six .card__column:last-of-type {
+            align-self: start;
+            width: auto;
+            min-width: 60px;
+        }
+
+        .card--six .card__column:last-of-type .card__company {
+            border-radius: 100px;
+            width: var(--entity-size);
+        }
+
+        .card--three .card__dummy,
+        .card--five .card__dummy,
+        .card--six .card__dummy {
+            width: 30cqi;
+            min-width: 220px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            height: 260%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .card--five .card__dummy {
+            height: 425%;
+        }
     </style>
 </head>
 
