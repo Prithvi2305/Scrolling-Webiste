@@ -455,6 +455,102 @@
             --h: 160%;
             --w: max(55cqi, 320px);
         }
+
+        .card--five {
+            --x: calc(var(--span) * -1);
+            --y: -45%;
+            --r: -20deg;
+            --h: 525%;
+            --w: max(30cqi, 160px);
+        }
+
+        .card--six {
+            --x: calc(var(--span) * 1);
+            --y: -30%;
+            --r: -5deg;
+            --h: 400%;
+            --w: max(45cqi, 305px);
+        }
+
+        @supports (animation-timeline: scroll()) {
+
+            .hero {
+                position: absolute;
+            }
+
+            .card {
+                animation: grow both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card__avatar img {
+                animation: fade-in both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            @keyframes fade-in {
+
+                0%,
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            .password svg {
+                animation: fade-in both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card__content {
+                animation: slide both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card--one .card__avatar,
+            .card--four .card__avatar {
+                --s: 2;
+                transform-origin: 0 50%;
+                animation: morph both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card--two .card__avatar {
+                animation: shrink both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card--two .card__column:last-of-type,
+            .card--three .card__column:last-of-type,
+            .card--five .card__column:last-of-type {
+                animation: slide both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card--six .card__column:last-of-type .card__company {
+                animation: cta-morph both linear, color-in both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .card--five .card__dummy,
+            .card--six .card__dummy {
+                animation: expand both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
+
+            .cta {
+                animation: morph both linear;
+                animation-timeline: --scroller;
+                animation-range: entry 0% exit 0%;
+            }
     </style>
 </head>
 
